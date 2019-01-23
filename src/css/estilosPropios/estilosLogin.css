@@ -1,0 +1,134 @@
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background: url("../../images/fondo3.jpg") no-repeat center top;
+background-size: cover;
+background-repeat: no-repeat;
+height: 94%;
+font-family: 'Numans', sans-serif;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(255,255,255,0.8) !important;
+}
+
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #ffffff;
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+    width: 50px;
+    background-color: #007786;
+    color: white;
+    border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: white;
+background-color: #007786;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+.piedepagina {
+    background: #111111;
+    color: #fff;
+    text-align: center;
+    font-size: .9rem;
+}
+.piedepagina .redes-sociales {
+    
+    display: flex;
+  
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.piedepagina .redes-sociales a {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 .5rem;
+    opacity: .7;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.piedepagina .redes-sociales a:hover {
+    opacity: 1;
+}
+.ir-arriba {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    color: #ff0000;
+    text-decoration: none;
+    z-index: 99999;
+    line-height: 0;
+    display: none;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.ir-arriba:hover,
+.ir-arriba:focus {
+    outline: 0;
+    text-decoration: none;
+    color: #fff;
+}

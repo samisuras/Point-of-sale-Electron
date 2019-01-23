@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Principal</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../fonts/fontawesome-free-5.6.3-web/css/all.css">
+    <link rel="stylesheet" href="../css/estilosPropios/estilosPrincipal.css">
+    <link rel="stylesheet" href="../css/estilosPropios/Inventario.css">
+</head>
+<body>
+    <header class="headerBlue mb-0">
+        <img class="inline mt-0 mb-0 mr-2" src="../images/logo-prueba.png" alt="" height="56rem">
+        <h1 class="inline nomIz blanco" id="usuario"></h1>
+        <span id="derechaHeader">
+                <p class="inline blanco mr-5">Fecha: <span id="dia"></span> / <span id="mes"></span> / <span id="anual"></span> </p>
+                <a href="index.html" title="Cambiar Usuario">    
+                    <i class="fas fa-user blanco"></i> 
+                    <i class="fas fa-caret-down blanco mr-4"></i>
+                </a>
+        </span>
+    </header>  
+
+    <aside style="float: left;">
+        <div class="vertical-menu">
+            <a href="principal.html">
+                <i class="fas fa-desktop"><span class="ml-3">Principal</span></i>
+            </a>
+            <a onclick="menu()" href="#" class="active">
+                <i class="fas fa-box"></i><span class="ml-3">Articulos</span>
+            </a>
+            <a href="#" id="Categorias" class="bg-primary" hidden>
+                <span class="ml-4">- Categorias</span>
+            </a>
+            <a href="#" id="Marcas" class="bg-primary" hidden>
+                    <span class="ml-4">- Marcas</span>
+            </a>
+            <a href="Inventario.html" id="Inventario" class="bg-primary" hidden>
+                    <span class="ml-4">- Inventario</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-cash-register"></i><span class="ml-3">Ventas</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-users"></i><span class="ml-3">Proveedores</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-truck"></i><span class="ml-3">Compras</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-user"></i><span class="ml-3">Clientes</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-tools"><span class="ml-3">Configuraciones</span></i>
+            </a>
+        </div>
+    </aside>
+
+    <article class="container">
+        <div align="center">
+            <a onclick="agregar()" href="#" title="Agregar Productos"><i class="fas fa-plus-circle fa-3x m-3"></i></a>
+            <a onclick="agregarProductosLista()" href="#" title="Modificar Productos"><i class="fas fa-exchange-alt fa-3x m-3"></i></a>
+            <a onclick="eliminar()" href="#" title="Eliminar Productos"><i class="fas fa-minus-circle fa-3x m-3"></i></a>
+        </div>
+    </article>
+
+    <!--Seccion para agregar productos visible hasta que se de click en agregar-->
+    <br>
+    <section id="agregarProductos" class="productosE" class="container mr-5" style="float: right;" hidden>
+        <form onsubmit="agregarProducto()">
+            <div class="form-group">
+                <label>Código de barras</label>
+                <input type="number" class="form-control" id="id_producto" placeholder="Ingresa aqui" required>
+            </div>
+            <div class="form-group">
+                <label>Nombre de laboratorio</label>
+                <input type="text" class="form-control" id="laboratorio" placeholder="Ingresa aqui" >
+            </div>
+            <div class="form-group">
+                <label>Fecha de caducidad</label>
+                <input type="text" class="form-control" id="fCaducidad" placeholder="Ingresa aqui">
+            </div>
+            <div class="form-group">
+                <label>Existencia</label>
+                <input type="number" class="form-control" id="existencia" placeholder="Ingresa aqui">
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingresa aqui">
+            </div>
+            <div class="form-group">
+                <label>Precio</label>
+                <input type="number" class="form-control" id="precio" placeholder="Ingresa aqui">
+            </div>
+                
+            <button id="boton" type="submit" class="btn btn-primary btn-block">Agregar</button>
+            
+        </form>   
+    </section>
+    
+    <!--Seccion para hacer cambios a productos, visible hasta que se de click en agregar-->
+
+    <section id="cambiarProductos" class="productos" class="container mr-5" style="float: right;" hidden>
+        <form >
+            <h2>Nombre de los productos</h2>
+            <input id="productoSelecionado" list="productos" class="form-group lista">
+            <datalist id="productos">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </datalist>
+            <input type="text" name="" id="idEscondido" hidden>
+            <div>
+                <button onclick="ponerDatosForm()" type="submit" class="btn btn-primary">Cambiar</button>
+            </div>
+        </form>
+        <!--UNA VEZ SELECCIONADO UN PRODUCTO SE MOSTRARA SU INFORMACION PARA CAMBIAR-->
+        <form id="modificar" onsubmit="modificarProducto()" hidden>
+            <div class="form-group">
+                <label>Nombre de laboratorio</label>
+                <input type="text" class="form-control" id="laboratorioC" placeholder="Ingresa aqui" >
+            </div>
+            <div class="form-group">
+                <label>Fecha de caducidad</label>
+                <input type="text" class="form-control" id="fCaducidadC" placeholder="Ingresa aqui">
+            </div>
+            <div class="form-group">
+                <label>Existencia</label>
+                <input type="number" class="form-control" id="existenciaC" placeholder="Ingresa aqui">
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" id="nombreC" placeholder="Ingresa aqui">
+            </div>
+            <div class="form-group">
+                <label>Precio</label>
+                <input type="number" class="form-control" id="precioC" placeholder="Ingresa aqui">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" >Cambiar</button>
+        </form> 
+    </section>
+
+    <!--SECCION PARA ELEMINAR PRODUCTOS-->
+
+    <section id="eliminar" class="productos" class="container mr-5" style="float: right;" hidden>
+        <form>
+            <h2>Nombre de los productos</h2>
+            <input id="productoSelecionadoE" list="productos" class="form-group lista">
+            <datalist id="productos" class="lista">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </datalist>
+            <input type="text" name="" id="idEscondidoE" hidden>
+            <div>
+                <button onclick="confirmacionEliminar()" type="submit" class="btn btn-primary">Eliminar</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="../js/JSprograma/Inventario.js"></script>
+    <script>
+        //SACAR USUARIO
+        var usuario = localStorage.getItem('nombreUsuario');
+        document.getElementById("usuario").innerHTML = "Bienvenido: " + usuario;
+
+        //DIA MES Y ANO
+        var tiempo = new Date();
+        document.getElementById("dia").innerHTML = tiempo.getDate();
+        document.getElementById("mes").innerHTML = tiempo.getMonth() + 1;
+        document.getElementById("anual").innerHTML = tiempo.getFullYear(); 
+    </script>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

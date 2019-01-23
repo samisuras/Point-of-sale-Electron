@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Principal</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../fonts/fontawesome-free-5.6.3-web/css/all.css">
+    <link rel="stylesheet" href="../css/estilosPropios/estilosPrincipal.css">
+</head>
+<body>
+    <header class="headerBlue mb-0">
+        <img class="inline mt-0 mb-0 mr-2" src="../images/logo-prueba.png" alt="" height="56rem">
+        <h1 class="inline nomIz blanco" id="usuario"></h1>
+        <span id="derechaHeader">
+                <p class="inline blanco mr-5">Fecha: <span id="dia"></span> / <span id="mes"></span> / <span id="anual"></span> </p>
+                <a href="index.html" title="Cambiar Usuario">    
+                    <i class="fas fa-user blanco"></i> 
+                    <i class="fas fa-caret-down blanco mr-4"></i>
+                </a>
+        </span>
+    </header>  
+
+    <aside>
+        <div class="vertical-menu">
+            <a href="principal.html" class="active">
+                <i class="fas fa-desktop"><span class="ml-3">Principal</span></i>
+            </a>
+            <a onclick="menu()" href="#" >
+                <i class="fas fa-box"></i><span class="ml-3">Articulos</span>
+            </a>
+            <a href="#" id="Categorias" class="bg-primary" hidden>
+                <span class="ml-4">- Categorias</span>
+            </a>
+            <a href="#" id="Marcas" class="bg-primary" hidden>
+                    <span class="ml-4">- Marcas</span>
+            </a>
+            <a href="Inventario.html" id="Inventario" class="bg-primary" hidden>
+                    <span class="ml-4">- Inventario</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-cash-register"></i><span class="ml-3">Ventas</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-users"></i><span class="ml-3">Proveedores</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-truck"></i><span class="ml-3">Compras</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-user"></i><span class="ml-3">Clientes</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-tools"><span class="ml-3">Configuraciones</span></i>
+            </a>
+        </div>
+    </aside>
+    
+    <script>
+        ban = 0;
+        function menu()
+        {
+            ban++;
+            if((ban %2)!=0)
+            {
+                document.getElementById("Categorias").hidden = false;
+                document.getElementById("Marcas").hidden = false;
+                document.getElementById("Inventario").hidden = false;
+                
+            }
+            else{
+                document.getElementById("Categorias").hidden = true;
+                document.getElementById("Marcas").hidden = true;
+                document.getElementById("Inventario").hidden = true;
+                
+            }
+            
+        }
+        //SACAR USUARIO
+        var usuario = localStorage.getItem('nombreUsuario');
+        document.getElementById("usuario").innerHTML = "Bienvenido: " + usuario;
+
+        //DIA MES Y ANO
+        var tiempo = new Date();
+        document.getElementById("dia").innerHTML = tiempo.getDate();
+        document.getElementById("mes").innerHTML = tiempo.getMonth() + 1;
+        document.getElementById("anual").innerHTML = tiempo.getFullYear(); 
+    </script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
+

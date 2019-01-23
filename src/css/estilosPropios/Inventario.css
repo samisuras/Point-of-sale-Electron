@@ -1,0 +1,47 @@
+.fa-plus-circle
+  {
+      color: rgb(47, 255, 47);
+  }
+
+.fa-undo
+{
+    color: rgb(226, 226, 1);
+}
+
+.fa-minus-circle
+{
+    color: brown;
+}
+
+.form-group
+{
+    width: 45rem;
+}
+
+.productos
+{
+    position: absolute;
+    margin-left: 25rem;
+    width: 35vw;
+}
+
+.productosE
+{
+    position: absolute;
+    margin-left: 18rem;
+    width: 15vw;
+}
+
+.lista
+{
+    width: 40vw;
+}
+
+#boton
+{
+    position: relative;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}

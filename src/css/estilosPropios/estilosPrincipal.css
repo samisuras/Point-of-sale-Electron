@@ -1,0 +1,68 @@
+.headerBlue
+{
+    background-color: #007786;
+    height: 3.5rem;
+}
+.inline
+{
+    display: inline-block;
+}
+
+img
+{
+    position: absolute;
+}
+
+.nomIz
+{
+    margin-left: 10%;
+}
+
+.blanco
+{
+    color: aliceblue;
+}
+
+#derechaHeader
+{
+    
+    float: right;
+    margin-top: 1rem;
+}
+.vertical-menu {
+    width: 12rem;
+    font-size: 1.1rem;
+  }
+  
+  .vertical-menu a {
+    background-color: #007786;
+    color: white;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+  }
+  
+  .vertical-menu a:hover {
+    /*background-color: rgb(223, 223, 223);*/
+    background-color: rgb(245, 245, 245);
+    color: black;
+  }
+  
+  .vertical-menu a.active {
+    background-color:brown;
+      /*
+    background-color: rgb(6, 12, 46);
+    */
+    color: white;
+  }
+  
+  .subCat{
+    background-color: #0098ac;
+  }
+
+  .rojo
+  {
+      color: brown;
+  }
+
+  
